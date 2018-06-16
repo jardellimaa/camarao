@@ -1,7 +1,6 @@
 package br.com.camarao.service;
 
 import java.util.Calendar;
-import java.util.Locale;
 import java.util.TimeZone;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +19,7 @@ public class PopulaBancoRunnable implements Runnable {
 
     public void run() {
     	while (true) {
-			Calendar c = Calendar.getInstance(TimeZone.getTimeZone("GMT-3"),new Locale("pt_BR"));
+			Calendar c = Calendar.getInstance(TimeZone.getTimeZone("GMT-6"));
 			Camarao camarao = new Camarao(s.simularSalinidade(), s.simularSalinidade(), s.simularTemperatura(),
 					s.simularTransparencia(), s.simularMateriaOrganica(), s.simularOxigenioDissolvido(), s.simularPh(),
 					s.simularAlcalinidadeDoce(), s.simularAlcalinidadeSalobra(), s.simularDurezaDoce(), s.simularDurezaSalobra(),
