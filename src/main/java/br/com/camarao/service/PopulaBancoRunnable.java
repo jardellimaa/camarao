@@ -25,10 +25,9 @@ public class PopulaBancoRunnable implements Runnable {
 					s.simularAlcalinidadeDoce(), s.simularAlcalinidadeSalobra(), s.simularDurezaDoce(), s.simularDurezaSalobra(),
 					s.simularAmonia(), s.simularNitritoDoce(), s.simularNitritoSalobra(), s.simularNitratoDoce(),
 					s.simularNitratoSalobra(), s.simularH2s(), s.simularSilicato(), c);
-			System.out.println(camarao);
 			camaroes.save(camarao);
 			try {
-				Thread.sleep(1000*60);
+				Thread.sleep(1000*30);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
