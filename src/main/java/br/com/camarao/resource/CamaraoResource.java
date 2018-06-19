@@ -28,7 +28,7 @@ public class CamaraoResource {
 	@CrossOrigin
 	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<List<Camarao>> listar(){
-		return new ResponseEntity<List<Camarao>>(camaroes.findAll(), HttpStatus.OK);
+		return new ResponseEntity<List<Camarao>>(camaroes.findAllByOrderByIdDesc(), HttpStatus.OK);
 	}
 	
 	@CrossOrigin
