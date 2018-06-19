@@ -1,7 +1,6 @@
 package br.com.camarao.service;
 
-import java.util.Calendar;
-import java.util.TimeZone;
+import java.time.LocalDateTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -19,12 +18,12 @@ public class PopulaBancoRunnable implements Runnable {
 
     public void run() {
     	while (true) {
-			Calendar c = Calendar.getInstance(TimeZone.getTimeZone("GMT-6"));
+			LocalDateTime l = (LocalDateTime.now());
 			Camarao camarao = new Camarao(s.simularSalinidade(), s.simularSalinidade(), s.simularTemperatura(),
 					s.simularTransparencia(), s.simularMateriaOrganica(), s.simularOxigenioDissolvido(), s.simularPh(),
 					s.simularAlcalinidadeDoce(), s.simularAlcalinidadeSalobra(), s.simularDurezaDoce(), s.simularDurezaSalobra(),
 					s.simularAmonia(), s.simularNitritoDoce(), s.simularNitritoSalobra(), s.simularNitratoDoce(),
-					s.simularNitratoSalobra(), s.simularH2s(), s.simularSilicato(), c);
+					s.simularNitratoSalobra(), s.simularH2s(), s.simularSilicato(), l);
 			camaroes.save(camarao);
 			try {
 				Thread.sleep(1000*30);

@@ -1,6 +1,6 @@
 package br.com.camarao.model;
 
-import java.util.Calendar;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,8 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 @Entity
 public class Camarao {
@@ -73,18 +71,17 @@ public class Camarao {
 	@Column(columnDefinition = "NUMERIC(6,1)")
 	private float silicato;
 
-	@Temporal(TemporalType.TIMESTAMP)
-	private Calendar medicao;
+	private LocalDateTime medicao;
 
 	public Camarao() {
 		super();
 	}
-	
+
 	public Camarao(float salinidadeSuperficie, float salinidadeFundo, float temperatura, float transparencia,
 			float materiaOrganica, float oxigenioDissolvido, float ph, float alcalinidadeDoce,
 			float alcalinidadeSalobra, float durezaTotalDoce, float durezaTotalSalobra, float amoniaTotal,
 			float nitritoDoce, float nitritoSalobra, float nitratoDoce, float nitratoSalobra, float h2s, float silicato,
-			Calendar medicao) {
+			LocalDateTime medicao) {
 		super();
 		this.salinidadeSuperficie = salinidadeSuperficie;
 		this.salinidadeFundo = salinidadeFundo;
@@ -107,11 +104,11 @@ public class Camarao {
 		this.medicao = medicao;
 	}
 
-	public Camarao(Integer id, float salinidadeSuperficie, float salinidadeFundo, float temperatura, float transparencia,
-			float materiaOrganica, float oxigenioDissolvido, float ph, float alcalinidadeDoce,
+	public Camarao(Integer id, float salinidadeSuperficie, float salinidadeFundo, float temperatura,
+			float transparencia, float materiaOrganica, float oxigenioDissolvido, float ph, float alcalinidadeDoce,
 			float alcalinidadeSalobra, float durezaTotalDoce, float durezaTotalSalobra, float amoniaTotal,
 			float nitritoDoce, float nitritoSalobra, float nitratoDoce, float nitratoSalobra, float h2s, float silicato,
-			Calendar medicao) {
+			LocalDateTime medicao) {
 		super();
 		this.id = id;
 		this.salinidadeSuperficie = salinidadeSuperficie;
@@ -287,24 +284,12 @@ public class Camarao {
 		this.silicato = silicato;
 	}
 
-	public Calendar getMedicao() {
+	public LocalDateTime getMedicao() {
 		return medicao;
 	}
 
-	public void setMedicao(Calendar medicao) {
+	public void setMedicao(LocalDateTime medicao) {
 		this.medicao = medicao;
-	}
-
-	@Override
-	public String toString() {
-		return "Camarao [id=" + id + ", salinidadeSuperficie=" + salinidadeSuperficie + ", salinidadeFundo="
-				+ salinidadeFundo + ", temperatura=" + temperatura + ", transparencia=" + transparencia
-				+ ", materiaOrganica=" + materiaOrganica + ", oxigenioDissolvido=" + oxigenioDissolvido + ", ph=" + ph
-				+ ", alcalinidadeDoce=" + alcalinidadeDoce + ", alcalinidadeSalobra=" + alcalinidadeSalobra
-				+ ", durezaTotalDoce=" + durezaTotalDoce + ", durezaTotalSalobra=" + durezaTotalSalobra
-				+ ", amoniaTotal=" + amoniaTotal + ", nitritoDoce=" + nitritoDoce + ", nitritoSalobra=" + nitritoSalobra
-				+ ", nitratoDoce=" + nitratoDoce + ", nitratoSalobra=" + nitratoSalobra + ", h2s=" + h2s + ", silicato="
-				+ silicato + ", medicao=" +medicao + "]";
 	}
 
 }
