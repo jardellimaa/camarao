@@ -66,6 +66,7 @@ public class CamaraoResource {
 		return ResponseEntity.notFound().build();
 	}
 	
+	@CrossOrigin
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<Void> deletar(@PathVariable("id") Integer id) {
 		

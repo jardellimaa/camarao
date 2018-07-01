@@ -70,6 +70,7 @@ public class LoginResource {
 		return ResponseEntity.notFound().build();
 	}
 	
+	@CrossOrigin
 	@RequestMapping(value = "/{login}", method = RequestMethod.DELETE)
 	public ResponseEntity<Void> deletar(@PathVariable("login") String login) {
 		
