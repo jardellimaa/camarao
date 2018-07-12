@@ -14,5 +14,4 @@ public interface Camaroes extends JpaRepository<Camarao, Integer> {
 	
 	public List<Camarao> findAllByOrderByIdDesc();
 	
-	
 }
